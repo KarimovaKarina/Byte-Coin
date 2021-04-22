@@ -33,7 +33,6 @@ struct CoinManager {
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { (data, response, error) in
                 if error != nil {
-                    
                     print(error!)
                     return
                 }
@@ -53,7 +52,6 @@ struct CoinManager {
         do {
             let decodedData = try decoder.decode(CoinData.self, from: data)
             let rate = decodedData.rate
-            print(rate)
             return rate
         } catch {
             delegate?.didFailWithError(error: error)
