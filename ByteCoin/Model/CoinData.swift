@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct CoinData {
+struct CoinData: Codable {
     let rate: Double
 }
